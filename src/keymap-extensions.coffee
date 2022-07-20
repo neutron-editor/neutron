@@ -1,6 +1,6 @@
 fs = require 'fs-plus'
 path = require 'path'
-KeymapManager = require 'atom-keymap'
+KeymapManager = require '@neutron-editor/keymap'
 CSON = require 'season'
 
 bundledKeymaps = require('../package.json')?._atomKeymaps

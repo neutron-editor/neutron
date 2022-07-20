@@ -2,7 +2,6 @@ const _ = require('underscore-plus');
 const fs = require('fs-plus');
 const dedent = require('dedent');
 const { Disposable, Emitter } = require('event-kit');
-const { watchPath } = require('./path-watcher');
 const CSON = require('season');
 const Path = require('path');
 const asyncQueue = require('async/queue');
@@ -72,10 +71,13 @@ module.exports = class ConfigFile {
     await this.reload();
 
     try {
-      return await watchPath(this.path, {}, events => {
-        if (events.some(event => EVENT_TYPES.has(event.action)))
-          this.requestLoad();
-      });
+      // TODO - reimplement this with `@neutron-editor/node-pathwatcher`
+      throw new Error('unimplemented');
+
+      // return await watchPath(this.path, {}, events => {
+      //   if (events.some(event => EVENT_TYPES.has(event.action)))
+      //     this.requestLoad();
+      // });
     } catch (error) {
       this.emitter.emit(
         'did-error',

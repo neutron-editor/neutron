@@ -1,7 +1,7 @@
 const _ = require('underscore-plus');
 const Grim = require('grim');
 const CSON = require('season');
-const FirstMate = require('first-mate');
+const FirstMate = require('@neutron-editor/first-mate');
 const { Disposable, CompositeDisposable } = require('event-kit');
 const TextMateLanguageMode = require('./text-mate-language-mode');
 const TreeSitterLanguageMode = require('./tree-sitter-language-mode');
@@ -9,7 +9,7 @@ const TreeSitterGrammar = require('./tree-sitter-grammar');
 const ScopeDescriptor = require('./scope-descriptor');
 const Token = require('./token');
 const fs = require('fs-plus');
-const { Point, Range } = require('text-buffer');
+const { Point, Range } = require('@neutron-editor/text-buffer');
 
 const PATH_SPLIT_REGEX = new RegExp('[/.]');
 

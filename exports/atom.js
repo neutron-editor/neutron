@@ -1,12 +1,11 @@
-const TextBuffer = require('text-buffer');
+const TextBuffer = require('@neutron-editor/text-buffer');
 const { Point, Range } = TextBuffer;
-const { File, Directory } = require('pathwatcher');
+const { File, Directory } = require('@neutron-editor/pathwatcher');
 const { Emitter, Disposable, CompositeDisposable } = require('event-kit');
 const BufferedNodeProcess = require('../src/buffered-node-process');
 const BufferedProcess = require('../src/buffered-process');
 const GitRepository = require('../src/git-repository');
 const Notification = require('../src/notification');
-const { watchPath } = require('../src/path-watcher');
 
 const atomExport = {
   BufferedNodeProcess,
@@ -21,7 +20,6 @@ const atomExport = {
   Emitter,
   Disposable,
   CompositeDisposable,
-  watchPath
 };
 
 // Shell integration is required by both Squirrel and Settings-View

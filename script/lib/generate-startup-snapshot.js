@@ -137,7 +137,7 @@ module.exports = function(packagedAppPath) {
         requiredModuleRelativePath ===
           path.join('..', 'node_modules', 'debug', 'node.js') ||
         requiredModuleRelativePath ===
-          path.join('..', 'node_modules', 'git-utils', 'src', 'git.js') ||
+          path.join('..', 'node_modules', '@neutron-editor/git-utils', 'src', 'git.js') ||
         requiredModuleRelativePath ===
           path.join('..', 'node_modules', 'glob', 'glob.js') ||
         requiredModuleRelativePath ===
@@ -166,7 +166,7 @@ module.exports = function(packagedAppPath) {
             'fetch-error.js'
           ) ||
         requiredModuleRelativePath ===
-          path.join('..', 'node_modules', 'oniguruma', 'src', 'oniguruma.js') ||
+          path.join('..', 'node_modules', '@neutron-editor/oniguruma', 'src', 'oniguruma.js') ||
         requiredModuleRelativePath ===
           path.join('..', 'node_modules', 'resolve', 'index.js') ||
         requiredModuleRelativePath ===
@@ -229,7 +229,7 @@ module.exports = function(packagedAppPath) {
         requiredModuleRelativePath ===
           path.join('..', 'node_modules', 'tmp', 'lib', 'tmp.js') ||
         requiredModuleRelativePath ===
-          path.join('..', 'node_modules', 'tree-sitter', 'index.js') ||
+          path.join('..', 'node_modules', '@neutron-editor/tree-sitter', 'index.js') ||
         requiredModuleRelativePath ===
           path.join('..', 'node_modules', 'yauzl', 'index.js') ||
         requiredModuleRelativePath ===

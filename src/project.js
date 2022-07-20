@@ -3,8 +3,7 @@ const path = require('path');
 const _ = require('underscore-plus');
 const fs = require('fs-plus');
 const { Emitter, Disposable, CompositeDisposable } = require('event-kit');
-const TextBuffer = require('text-buffer');
-const { watchPath } = require('./path-watcher');
+const TextBuffer = require('@neutron-editor/text-buffer');
 
 const DefaultDirectoryProvider = require('./default-directory-provider');
 const Model = require('./model');
@@ -452,10 +451,7 @@ module.exports = class Project extends Model {
     // We'll use the directory's custom onDidChangeFiles callback, if available.
     // CustomDirectory::onDidChangeFiles should match the signature of
     // Project::onDidChangeFiles below (although it may resolve asynchronously)
-    this.watcherPromisesByPath[directory.getPath()] =
-      directory.onDidChangeFiles != null
-        ? Promise.resolve(directory.onDidChangeFiles(didChangeCallback))
-        : watchPath(directory.getPath(), {}, didChangeCallback);
+    this.watcherPromisesByPath[directory.getPath()] = Promise.resolve(directory.onDidChange(didChangeCallback));
 
     for (let watchedPath in this.watcherPromisesByPath) {
       if (!this.rootDirectories.find(dir => dir.getPath() === watchedPath)) {

@@ -1,4 +1,4 @@
-{Directory} = require 'pathwatcher'
+{Directory} = require '@neutron-editor/pathwatcher'
 fs = require 'fs-plus'
 path = require 'path'
 url = require 'url'

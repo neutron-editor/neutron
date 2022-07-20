@@ -1,7 +1,7 @@
 /* global ResizeObserver */
 
 const etch = require('etch');
-const { Point, Range } = require('text-buffer');
+const { Point, Range } = require('@neutron-editor/text-buffer');
 const LineTopIndex = require('line-top-index');
 const TextEditor = require('./text-editor');
 const { isPairedCharacter } = require('./text-utils');

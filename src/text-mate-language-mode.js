@@ -1,11 +1,11 @@
 const _ = require('underscore-plus');
 const { CompositeDisposable, Emitter } = require('event-kit');
-const { Point, Range } = require('text-buffer');
+const { Point, Range } = require('@neutron-editor/text-buffer');
 const TokenizedLine = require('./tokenized-line');
 const TokenIterator = require('./token-iterator');
 const ScopeDescriptor = require('./scope-descriptor');
 const NullGrammar = require('./null-grammar');
-const { OnigRegExp } = require('oniguruma');
+const { OnigRegExp } = require('@neutron-editor/oniguruma');
 const {
   toFirstMateScopeId,
   fromFirstMateScopeId

@@ -1,4 +1,4 @@
-const { Point, Range } = require('text-buffer');
+const { Point, Range } = require('@neutron-editor/text-buffer');
 const { pick } = require('underscore-plus');
 const { Emitter } = require('event-kit');
 

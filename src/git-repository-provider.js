@@ -1,5 +1,5 @@
 const fs = require('fs');
-const { Directory } = require('pathwatcher');
+const { Directory } = require('@neutron-editor/pathwatcher');
 const GitRepository = require('./git-repository');
 
 const GIT_FILE_REGEX = RegExp('^gitdir: (.+)');

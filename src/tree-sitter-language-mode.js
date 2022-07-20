@@ -1,5 +1,5 @@
-const Parser = require('tree-sitter');
-const { Point, Range, spliceArray } = require('text-buffer');
+const Parser = require('@neutron-editor/tree-sitter');
+const { Point, Range, spliceArray } = require('@neutron-editor/text-buffer');
 const { Patch } = require('superstring');
 const { Emitter } = require('event-kit');
 const ScopeDescriptor = require('./scope-descriptor');

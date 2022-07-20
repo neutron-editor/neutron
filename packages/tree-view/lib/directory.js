@@ -2,7 +2,7 @@ const path = require('path')
 const _ = require('underscore-plus')
 const {CompositeDisposable, Emitter} = require('atom')
 const fs = require('fs-plus')
-const PathWatcher = require('pathwatcher')
+const PathWatcher = require('@neutron-editor/pathwatcher')
 const File = require('./file')
 const {repoForPath} = require('./helpers')
 
