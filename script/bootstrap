@@ -35,6 +35,6 @@ if (process.platform === 'win32') deleteMsbuildFromPath()
 
 installScriptDependencies(ci)
 runNpmInstall(CONFIG.repositoryRootPath)
-runElectronRebuild(Config.repositoryRootPath)
+runElectronRebuild(CONFIG.repositoryRootPath)
 
 dependenciesFingerprint.write()
