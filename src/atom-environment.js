@@ -895,12 +895,12 @@ class AtomEnvironment {
         );
         await this.displayWindow();
       }
-      this.commandInstaller.installAtomCommand(false, error => {
-        if (error) console.warn(error.message);
-      });
-      this.commandInstaller.installApmCommand(false, error => {
-        if (error) console.warn(error.message);
-      });
+
+      if (!this.inDevMode()) {
+        this.commandInstaller.installAtomCommand(false, error => {
+          if (error) console.warn(error.message);
+        });
+      }
 
       this.disposables.add(
         this.applicationDelegate.onDidChangeUserSettings(settings =>

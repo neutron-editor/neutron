@@ -29,18 +29,15 @@ module.exports = class CommandInstaller {
       );
     };
 
-    this.installAtomCommand(true, (error, atomCommandName) => {
+    this.installAtomCommand(true, (error, commandName) => {
       if (error) return showErrorDialog(error);
-      this.installApmCommand(true, (error, apmCommandName) => {
-        if (error) return showErrorDialog(error);
-        this.applicationDelegate.confirm(
-          {
-            message: 'Commands installed.',
-            detail: `The shell commands \`${atomCommandName}\` and \`${apmCommandName}\` are installed.`
-          },
-          () => {}
-        );
-      });
+      this.applicationDelegate.confirm(
+        {
+          message: 'Commands installed.',
+          detail: `The shell command \`${commandName}\` is installed.`
+        },
+        () => {}
+      );
     });
   }
 
@@ -60,24 +57,8 @@ module.exports = class CommandInstaller {
 
   installAtomCommand(askForPrivilege, callback) {
     this.installCommand(
-      path.join(this.getResourcesDirectory(), 'app', 'atom.sh'),
-      this.getCommandNameForChannel('atom'),
-      askForPrivilege,
-      callback
-    );
-  }
-
-  installApmCommand(askForPrivilege, callback) {
-    this.installCommand(
-      path.join(
-        this.getResourcesDirectory(),
-        'app',
-        'apm',
-        'node_modules',
-        '.bin',
-        'apm'
-      ),
-      this.getCommandNameForChannel('apm'),
+      path.join(this.getResourcesDirectory(), 'app', 'neutron.sh'),
+      this.getCommandNameForChannel('neutron'),
       askForPrivilege,
       callback
     );
